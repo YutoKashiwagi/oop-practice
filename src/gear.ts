@@ -1,9 +1,9 @@
 export class Gear {
   readonly chainRing: number
   readonly cog: number
-  readonly Wheel: Wheel | null
+  readonly Wheel: WheelInterface
 
-  constructor (chainRing: number, cog: number, Wheel: Wheel | null = null) {
+  constructor (chainRing: number, cog: number, Wheel: WheelInterface) {
     this.chainRing = chainRing
     this.cog = cog
     this.Wheel = Wheel
@@ -16,15 +16,15 @@ export class Gear {
 
   // ギアインチ
   gearInches (): number {
-    if (this.Wheel === null) {
-      throw new Error('Wheelを入力してください')
-    }
-
     return this.ratio() * this.Wheel.diameter()
   }
 }
 
-export class Wheel {
+export interface WheelInterface {
+  diameter(): number
+}
+
+export class Wheel implements WheelInterface {
   readonly rim: number
   readonly tire: number
 
