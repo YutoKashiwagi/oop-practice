@@ -16,10 +16,13 @@ export default class Gear {
     return this.chainRing / this.cog
   }
 
-  // ギアインチ = 車輪の直径 x ギア比
-  // 車輪の直径 = リムの直径 + (タイヤの厚み x 2)
-  gearInches = () => {
-    const diameter = this.rim + (this.tire * 2)
-    return this.ratio() * diameter
+  // 車輪の直径
+  diameter = (): number => {
+    return this.rim + (this.tire * 2)
+  }
+
+  // ギアインチ
+  gearInches = (): number => {
+    return this.ratio() * this.diameter()
   }
 }
