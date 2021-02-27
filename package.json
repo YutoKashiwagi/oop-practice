@@ -11,11 +11,5 @@
     "ts-node": "./node_modules/.bin/ts-node"
   },
   "dependencies": {
-    "@types/benchmark": "^2.1.0",
-    "@types/google-libphonenumber": "^7.4.19",
-    "@types/lodash": "^4.14.167",
-    "benchmark": "^2.1.4",
-    "google-libphonenumber": "^3.2.15",
-    "lodash": "^4.17.20"
   }
 }
