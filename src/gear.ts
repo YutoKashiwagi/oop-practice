@@ -10,12 +10,12 @@ export class Gear {
   }
 
   // ギア比
-  ratio = (): number => {
+  ratio (): number {
     return this.chainRing / this.cog
   }
 
   // ギアインチ
-  gearInches = (): number => {
+  gearInches (): number {
     if (this.Wheel === null) {
       throw new Error('Wheelを入力してください')
     }
@@ -34,12 +34,12 @@ export class Wheel {
   }
 
   // 車輪の直径
-  diameter = (): number => {
+  diameter (): number {
     return this.rim + (this.tire * 2)
   }
 
   // 車輪の演習
-  circumference = (): number => {
+  circumference (): number {
     return this.diameter() * Math.PI
   }
 }
