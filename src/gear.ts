@@ -16,7 +16,12 @@ export class Gear {
 
   // ギアインチ
   gearInches (): number {
-    return this.ratio() * this.Wheel.diameter()
+    return this.ratio() * this.diameter()
+  }
+
+  // diameterをGearクラス内のメソッドにする
+  diameter (): number {
+    return this.Wheel.diameter()
   }
 }
 
