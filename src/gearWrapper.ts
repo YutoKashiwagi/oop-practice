@@ -31,20 +31,10 @@ const SomeFrameWork = {
   }
 }
 
-class GearWrapper {
-  readonly chainRing: number
-  readonly cog: number
-  readonly Wheel: WheelInterface
-
-  // コンストラクタの引数を順不同にする
-  constructor ({ chainRing, cog, Wheel }: { chainRing: number, cog: number, Wheel: WheelInterface }) {
-    this.chainRing = chainRing
-    this.cog = cog
-    this.Wheel = Wheel
-  }
-
-  gear (): Gear {
-    return new SomeFrameWork.Gear(this.chainRing, this.cog, this.Wheel)
+const GearWrapper = {
+  // SomeFrameWork.Gear()の引数を順不同にする
+  gear ({ chainRing, cog, Wheel }: { chainRing: number, cog: number, Wheel: WheelInterface }) {
+    return new SomeFrameWork.Gear(chainRing, cog, Wheel)
   }
 }
 
@@ -57,5 +47,5 @@ const SomeFrameWorkGear = new SomeFrameWork.Gear(52, 11, WheelDuck)
 console.log(SomeFrameWorkGear)
 
 // GearWrapperのおかげで、引数が順不同になった
-const wrapped = (new GearWrapper({ cog: 11, chainRing: 52, Wheel: WheelDuck })).gear()
+const wrapped = GearWrapper.gear({ cog: 11, chainRing: 52, Wheel: WheelDuck })
 console.log(wrapped)
