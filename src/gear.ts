@@ -3,7 +3,7 @@ export class Gear {
   readonly cog: number
   readonly Wheel: WheelInterface
 
-  constructor (chainRing: number, cog: number, Wheel: WheelInterface) {
+  constructor ({ chainRing, cog, Wheel }: { chainRing: number, cog: number, Wheel: WheelInterface }) {
     this.chainRing = chainRing
     this.cog = cog
     this.Wheel = Wheel
@@ -33,7 +33,7 @@ export class Wheel implements WheelInterface {
   readonly rim: number
   readonly tire: number
 
-  constructor (rim: number, tire: number) {
+  constructor ({ rim, tire }: { rim: number, tire: number }) {
     this.rim = rim
     this.tire = tire
   }
