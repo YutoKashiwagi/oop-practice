@@ -53,3 +53,6 @@ const banner = new Banner('sample text')
 const printBanner = new PrintBanner(banner)
 
 new MainPrinter(printBanner)
+
+// (sample text)
+// *sample text*
